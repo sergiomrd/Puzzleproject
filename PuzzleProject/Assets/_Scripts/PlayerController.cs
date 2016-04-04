@@ -29,12 +29,33 @@ public class PlayerController : MonoBehaviour {
 	private void PlayerMove()
 	{
 		// Creates a new Vector2 that in his X axis gets the Axis Horizontal, and in his Y axis gets the Axis Vertical when the arrow keys are pressed
-		movementVector = new Vector2 (Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
 
-		// Creates a new Vector that multiplies the movementVector, the speed and the delta time
-		Vector2 movement = movementVector * speed * Time.deltaTime;
+		float horizontalMove = Input.GetAxisRaw("Horizontal");
+		float verticalMove = Input.GetAxisRaw("Vertical");
 
-		// With MovePosition, we move our player to the a new position by adding the player rigidbody position to our new movement vector
-		rb.MovePosition(movement + rb.position);
+		bool isWalking = (Mathf.Abs(horizontalMove) + Mathf.Abs(verticalMove)) > 0;
+
+		if(isWalking)
+		{
+			if(horizontalMove != 0)
+			{
+				verticalMove = 0;
+			}
+
+			if(verticalMove != 0)
+			{
+				horizontalMove = 0;
+			}
+
+			movementVector = new Vector2 (horizontalMove,verticalMove);
+
+			// Creates a new Vector that multiplies the movementVector, the speed and the delta time
+			Vector2 movement = movementVector * speed * Time.deltaTime;
+
+			// With MovePosition, we move our player to the a new position by adding the player rigidbody position to our new movement vector
+			rb.MovePosition(movement + rb.position);
+		}
+			
+
 	}
 }

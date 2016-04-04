@@ -85,6 +85,48 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &781734740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 781734741}
+  - 61: {fileID: 781734742}
+  m_Layer: 0
+  m_Name: ActionCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &781734741
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781734740}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1498512957}
+  m_RootOrder: 0
+--- !u!61 &781734742
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781734740}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -0.06}
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 0.22}
 --- !u!1 &1498512951 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 148144, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
@@ -118,6 +160,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!4 &1498512957 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 496668, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
+  m_PrefabInternal: {fileID: 1600798072}
+--- !u!61 &1498512958
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1498512951}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.18, y: 0.27}
 --- !u!1001 &1600798072
 Prefab:
   m_ObjectHideFlags: 0
@@ -161,6 +221,15 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b23bf8a1ef8f03345b8db72112584b80, type: 2}
+    - target: {fileID: 9553990, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21266582, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de2fb21ac3d2c8647a2fef860e28b05a,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
   m_IsPrefabParent: 0
