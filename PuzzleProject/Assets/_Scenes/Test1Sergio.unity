@@ -124,9 +124,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.06}
+  m_Offset: {x: 0.06, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.07, y: 0.22}
+  m_Size: {x: 0.22, y: 0.07}
 --- !u!1 &1498512951 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 148144, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+  actionObject: {fileID: 781734740}
 --- !u!50 &1498512955
 Rigidbody2D:
   serializedVersion: 2
@@ -230,7 +231,8 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: de2fb21ac3d2c8647a2fef860e28b05a,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11410388, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1847509655
