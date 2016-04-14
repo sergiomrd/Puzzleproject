@@ -18,6 +18,7 @@ public class FollowCamera : MonoBehaviour {
 	private Vector3 mapBoundMax, mapBoundMin;
 	private Camera cam;
 	private float halfCameraHeight, halfCameraWidth;
+	private float bottomBound, topBound, leftBound, rightBound;
 
 	// Use this for initialization
 	void Start () {
@@ -29,9 +30,11 @@ public class FollowCamera : MonoBehaviour {
 		mapBoundMin = level.GetComponent<Renderer> ().bounds.min;
 		halfCameraHeight = cam.orthographicSize;
 		halfCameraWidth = cam.aspect * cam.orthographicSize;
-		Debug.Log (mapBoundMax);
-		Debug.Log (mapBoundMin);
-		Debug.Log (halfCameraWidth);
+		bottomBound = mapBoundMin.y + halfCameraHeight;
+		topBound = -halfCameraHeight;
+		leftBound = halfCameraWidth;
+		rightBound = mapBoundMax.x - halfCameraWidth;
+
 	}
 
 	// Update is called once per frame
@@ -48,9 +51,16 @@ public class FollowCamera : MonoBehaviour {
 
 			targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime); 
 
+			float camX = Mathf.Clamp(target.transform.position.x, leftBound, rightBound);
+			float camY = Mathf.Clamp (target.transform.position.y, bottomBound, topBound);
+
+			cam.transform.position = Vector3.Lerp(new Vector3(camX, camY, cam.transform.position.z), targetPos + offset, 0f);
+
+			/*
+			//DISCLAIMER: WITH CLAMP METHOD THERE IS NO SMOOTH
+			//USE THIS IF YOU WANT SMOOTH CAMERA MOVEMENT
 			transform.position = Vector3.Lerp( transform.position, targetPos + offset, 0.25f);
 
-			//TODO Do it with Math.Clamp
 			if (transform.position.y <= mapBoundMin.y + halfCameraHeight)
 				transform.position = Vector3.Lerp( new Vector3(transform.position.x, mapBoundMin.y + halfCameraHeight, transform.position.z), targetPos + offset, 0f);
 
@@ -62,6 +72,8 @@ public class FollowCamera : MonoBehaviour {
 
 			if (transform.position.x >= mapBoundMax.x - halfCameraWidth)
 				transform.position = Vector3.Lerp( new Vector3(mapBoundMax.x - halfCameraWidth, transform.position.y, transform.position.z), targetPos + offset, 0f);
+			
+			*/
 
 		}
 	}

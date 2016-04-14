@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d661517c73ba2409396f3e68f7d3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.75
+  speed: 0.5
   actionObject: {fileID: 781734740}
 --- !u!50 &1498512955
 Rigidbody2D:
@@ -291,7 +291,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1498512951}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -360,7 +360,7 @@ Prefab:
     - target: {fileID: 21266582, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b23bf8a1ef8f03345b8db72112584b80, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 9553990, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
       propertyPath: m_Enabled
       value: 0
