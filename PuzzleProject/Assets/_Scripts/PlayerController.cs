@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour {
 		if(isWalking)
 		{
 			// If that fixes the movement to 4 way direction
+			/*
 			if(horizontalMove != 0)
 			{
 				verticalMove = 0;
@@ -52,25 +53,26 @@ public class PlayerController : MonoBehaviour {
 			{
 				horizontalMove = 0;
 			}
+			*/
 
 			movementVector = new Vector2 (horizontalMove,verticalMove);
 
 			// Compares where is the player moving to know where is facing
 			if(movementVector.x == 1f && movementVector.y == 0f)
 			{
-				isFacing("right");
+
 			}
 			else if (movementVector.x == -1f && movementVector.y == 0f)
 			{
-				isFacing("left");
+
 			}
 			else if (movementVector.x == 0f && movementVector.y == 1f)
 			{
-				isFacing("up");
+		
 			}
 			else if (movementVector.x == 0f && movementVector.y == -1f)
 			{
-				isFacing("down");
+				
 			}
 				
 

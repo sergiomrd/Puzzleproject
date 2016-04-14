@@ -229,11 +229,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 408036, guid: e1006064feb20cc4ab6a33375aa535ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 408036, guid: e1006064feb20cc4ab6a33375aa535ed, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 408036, guid: e1006064feb20cc4ab6a33375aa535ed, type: 2}
       propertyPath: m_LocalPosition.z
@@ -259,6 +259,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2338640, guid: e1006064feb20cc4ab6a33375aa535ed, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 2094085673
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1006064feb20cc4ab6a33375aa535ed, type: 2}
   m_IsPrefabParent: 0
@@ -277,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d661517c73ba2409396f3e68f7d3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.75
   actionObject: {fileID: 781734740}
 --- !u!50 &1498512955
 Rigidbody2D:
@@ -296,17 +300,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1498512956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1498512951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9199b51a91f7061419adaa6fdae5b256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1498512957 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496668, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
@@ -334,11 +327,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 496668, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.51
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 496668, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.785
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 496668, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -385,6 +378,10 @@ Prefab:
     - {fileID: 11410388, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 22103f723ef8fa64ea5e00bf33007b3b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1755500943 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 179396, guid: e1006064feb20cc4ab6a33375aa535ed, type: 2}
+  m_PrefabInternal: {fileID: 1233879252}
 --- !u!1 &1847509655
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +394,7 @@ GameObject:
   - 92: {fileID: 1847509658}
   - 124: {fileID: 1847509657}
   - 81: {fileID: 1847509656}
+  - 114: {fileID: 1847509661}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -445,7 +443,7 @@ Camera:
   far clip plane: 1000
   field of view: 8
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 0.62
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -466,8 +464,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1847509655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.05, y: -0.84, z: -10}
+  m_LocalPosition: {x: 1.49, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1847509661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1847509655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9e3e62601aa4b1488fd9af6074b6944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interpVelocity: 0
+  level: {fileID: 1755500943}
+  minDistance: 0
+  followDistance: 0
+  target: {fileID: 1498512951}
+  offset: {x: 0, y: 0, z: 0}
+  interpMultiplier: 0
